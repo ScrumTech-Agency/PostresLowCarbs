@@ -9,4 +9,4 @@ const connectDatabase = () => {
   })
 }
 
-modulo.exports=connectDatabase; 
+module.exports=connectDatabase;  
