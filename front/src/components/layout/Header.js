@@ -7,6 +7,7 @@ const Header = () => {
       <nav className="navbar row">
         <div className="col-12 col-md-3">
           <div className="navbar-brand"></div>
+          <img src="./images/logo70f.png" alt="Logo Postres Low Carbs"></img>
         </div>
         <div className="col-12 col-md-4 mt-2 mt-md-0">
           <div className="input-group">
