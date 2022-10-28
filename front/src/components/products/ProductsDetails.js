@@ -4,7 +4,7 @@ import MetaData from '../layout/MetaData'
 export const ProductDetails = () => {
   return (
     <Fragment>
-        <MetaData title="Granola Keto Vainilla con Canela"></MetaData>
+        <MetaData title="Harina de Almendra 300 gr"></MetaData>
         <div className='row d-flex justify-content-around'>
             <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
                 <img src='..\images\harinaAlmendra.jpeg' alt="imagen del proucto" height="450" width="450"></img>
