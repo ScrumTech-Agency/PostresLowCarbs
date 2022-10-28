@@ -1,7 +1,6 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import MetaData from './layout/MetaData'
-import { useDispatch } from 'react-redux'
-import { getProducts } from '../actions/productActions'
+
 
 export const HomeAdmin = () => {
 
