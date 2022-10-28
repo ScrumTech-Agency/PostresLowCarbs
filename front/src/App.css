@@ -46,7 +46,7 @@ f #search_field {
 
 #login_btn,
 #view_btn {
-  background-color: #FF7C5C;
+  background-color: #dfaa9c;
   padding: 0.4rem 1.8rem;
   font-family: calibri;
 }
@@ -57,7 +57,7 @@ f #search_field {
 }
 
 #cart_count {
-  background-color: #FF7C5C;
+  background-color: #dfaa9c;
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
   color: black;
@@ -92,8 +92,8 @@ f #search_field {
 }
 
 #view_btn {
-  background-color: #FF7C5C;
-  color: white;
+  background-color: #dfaa9c;
+  color: black;
 }
 
 .card-img-top {
@@ -117,7 +117,7 @@ footer {
   background-color: #3CE6AE;
   position: absolute;
   margin-top: 8rem;
-  color: white;
+  color: black;
   bottom: 0px;
   width: 100%;
 }
