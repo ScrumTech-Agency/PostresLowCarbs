@@ -34,7 +34,7 @@ export const ProductDetails = () => {
                     <Carousel pause='hover'>
                         {product.imagen && product.imagen.map(img =>(
                             <Carousel.Item key={img.public_id}>
-                                <img className='d-block w-100' src={img.url} alt={product.nombre}></img>
+                                <img className='d-block w-100' src={"../"+ img.url} alt={product.nombre}></img>
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -42,8 +42,14 @@ export const ProductDetails = () => {
 
     
                 <div className='col-12 col-lg mt-5'>
-                    <h3>Harina de Almendra 300 gr</h3>
-                    <p id='product_id'>Product #123456789</p>
+                    <h3>{product.nombre}</h3>
+                    <p id='product_id'>ID del producto {product._id}</p>
+                    <hr />
+
+                    <div className='rating-outer'>
+                        <div className='rating-inner' style={{width: `${(product.calificacion/5)*100}%`}}></div>
+                    </div>
+                    <span id='No_de_reviews'>({product.numCalificaciones} Reviews)</span>
                 </div>
             </div> 
             </Fragment>
