@@ -25,6 +25,7 @@ export const HomeAdmin = () => {
                                 <span id='No_de_opiniones'> 5 reviews</span>
                             </div>
                             <p className='card-text'> $ 20.000</p>
+                            <h7>Stock: 15</h7>
                         </div>
                     </div>
                 </div>
@@ -43,6 +44,7 @@ export const HomeAdmin = () => {
                                 <span id='No_de_opiniones'> 2 reviews</span>
                             </div>
                             <p className='card-text'> $ 25.000</p>
+                            <h7>Stock: 18</h7>
                         </div>
                     </div>
                 </div>
@@ -61,6 +63,7 @@ export const HomeAdmin = () => {
                                                 <span id='No_de_opiniones'> 12 reviews</span>
                                             </div>
                                             <p className='card-text'> $ 30.000</p>
+                                            <h7>Stock: 20</h7>
                                         </div>
                                     </div>
                                 </div>
@@ -79,6 +82,7 @@ export const HomeAdmin = () => {
                                                 <span id='No_de_opiniones'> 15 reviews</span>
                                             </div>
                                             <p className='card-text'> $35.000</p>
+                                            <h7>Stock: 55</h7>
                                         </div>
                                     </div>
                                 </div>
