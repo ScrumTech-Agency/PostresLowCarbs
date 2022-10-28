@@ -33,10 +33,7 @@ export const ProductDetails = () => {
         setQuantity(qty)
     }
     
-<<<<<<< HEAD
     {/*Esta funcion permite disminuir la cantidad de productos que se piensa agregar al carrito */}
-=======
->>>>>>> 21455f47b75068a3ae88b7008473f2e28ff6f5ad
     const decreaseQty = () => {
         const contador = document.querySelector('.count')
 
