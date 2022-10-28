@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Ventas from './components/Ventas';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductDetails } from "./components/products/ProductsDetails";
+import HomeAdmin from "./components/HomeAdmin";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/Home" element={<Home />}/>
             <Route path="/Ventas" element={<Ventas />}/>
             <Route path='/producto/:id' element={<ProductDetails />}/>
+            <Route path="/HomeAdmin" element={<HomeAdmin />}/>
           </Routes>
         </div>
         <Footer />
