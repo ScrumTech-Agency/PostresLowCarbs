@@ -65,6 +65,37 @@ export const ProductDetails = () => {
                     <p>{product.descripcion}</p>
                     <hr />
                     <p id='vendedor'>Vendido por: <strong>{product.vendedor}</strong></p>       
+                    <button id='btn_review' type='button' className='btn btn-primary mt-4' data-toggle='modal' data-target='#calificacionModal'>Deja tu Opinion</button> {/*Mensaje emergente para dejar opinion y calificaciones */}
+
+                    <div className='row mt-2 mb-5'>
+                        <div className='rating w-50'>
+                            <div className='modal fade' id='ratingModal' tabIndex='-1' role='dialog' aria-labelledby='ratingModalLabel' aria-hidden='true'>
+                                <div className='modal-dialog' role='document'>
+                                    <div className='modal-content'>
+                                        <div className='model-header'>
+                                            <h5 className='modal-title' id='ratingModalLabel'>Enviar review</h5>
+                                            <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>NOMBRE DUMMIEN POR AHORA</span>
+                                            </button>
+                                        </div>
+                                        <div className='modal-body'>
+                                            <ul className='stars'>
+                                                <li className='star'><i className='fa fa-star'></i></li>
+                                                <li className='star'><i className='fa fa-star'></i></li>
+                                                <li className='star'><i className='fa fa-star'></i></li>
+                                                <li className='star'><i className='fa fa-star'></i></li>
+                                                <li className='star'><i className='fa fa-star'></i></li>
+                                            </ul>
+
+                                            <textarea name="review" id='review' className='form-control mt3'></textarea>
+
+                                            <button className='btn my-3 float-right review-btn px-4 text-white' data-dismiss='modal' aria-label='Close'>Enviar</button>
+                                        </div>
+                                    </div>
+                            </div>        
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div> 
             </Fragment>
