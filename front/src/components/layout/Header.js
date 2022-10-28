@@ -18,7 +18,7 @@ const Header = () => {
               type="text"
               id="search_field"
               class="form-control"
-              placeholder="Search"
+              placeholder="Buscar"
             ></input>
             <div class="input-group-append"></div>
           </div>

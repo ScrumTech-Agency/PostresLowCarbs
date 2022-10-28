@@ -3,10 +3,12 @@ import React, { Fragment } from "react";
 export const Footer = () => {
   return (
     <Fragment>
-      <footer className="py-1">
-        <p className="text-center mt-1">
-          Postres Low Carbs Store - 2022 - Todos los derechos reservados
-        </p>
+      <footer class="footer bg-inverse py-1">
+        <div class="container">
+          <p className="text-center mt-2">
+            &copy; 2022 Postres Low Carbs Store - Todos los derechos reservados
+          </p>
+        </div>
       </footer>
     </Fragment>
   );

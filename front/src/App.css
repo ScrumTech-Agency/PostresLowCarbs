@@ -92,7 +92,7 @@ f #search_field {
 }
 
 #view_btn {
-  background-color: #f5edd6;
+  background-color: #ad2809;
   color: white;
 }
 
@@ -114,9 +114,11 @@ f #search_field {
 
 /* Footer */
 footer {
+  background-color: #850e06;
+  position: absolute;
   margin-top: 8rem;
-  color: grey;
-  bottom: 0;
+  color: white;
+  bottom: 0px;
   width: 100%;
 }
 
