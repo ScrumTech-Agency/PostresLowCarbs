@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux'
 import { getProducts } from '../actions/productActions'
 
 export const Home = () => {
-   /* const dispatch = useDispatch();
+    const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getProducts());
-    },[dispatch])*/
+    },[dispatch])
 
   return (
     <Fragment>
