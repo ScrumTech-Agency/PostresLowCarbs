@@ -48,7 +48,8 @@ f #search_field {
 #view_btn {
   background-color: #dfaa9c;
   padding: 0.4rem 1.8rem;
-  font-family: calibri;
+  font-weight: bold;
+  font-family: roboto;
 }
 
 #cart {
