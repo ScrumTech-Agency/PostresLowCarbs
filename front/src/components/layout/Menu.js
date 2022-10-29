@@ -4,7 +4,7 @@ export const Menu = () => {
   return (
     <Fragment>
 
-<nav class="class="contenedor d-flex justify-content-evenly">
+<nav class="contenedor d-flex justify-content-evenly">
       
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -19,7 +19,7 @@ export const Menu = () => {
         </li>
       </ul>
     </div>
-  </div>
+  
 </nav>
 
     </Fragment>
