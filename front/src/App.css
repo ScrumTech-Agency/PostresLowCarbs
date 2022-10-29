@@ -26,7 +26,7 @@ body {
   border-radius: 5px;
 }
 
-nav {
+.nav {
   background-color: #3CE6AE;
   padding: 1rem 1rem;
 }
@@ -114,7 +114,7 @@ f #search_field {
 
 /* Footer */
 footer {
-  background-color: #3CE6AE;
+  background-color: #09996A;
   position: absolute;
   margin-top: 8rem;
   color: black;
