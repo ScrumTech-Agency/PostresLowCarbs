@@ -6,7 +6,7 @@ const Ventas = () => {
 
     <Fragment>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,8 +27,8 @@ const Ventas = () => {
     
 
 
-
-    <div className="table responsive text-center py-5 mb-5">
+  <div className="contenedor d-flex flex-wrap align-content-center">
+    <div className="table responsive text-center">
       <Table bordered hover>
         <thead className ="table-danger">
           <tr>
@@ -61,6 +61,7 @@ const Ventas = () => {
         </tfoot>
       </Table>
     </div>
+  </div>  
     </Fragment>
   );
 };
