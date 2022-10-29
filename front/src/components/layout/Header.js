@@ -26,7 +26,7 @@ const Header = () => {
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
           <span>
             <button class="btn btn-sm" id="login_btn">
-              Iniciar Sesión
+              INICIAR SESIÓN
             </button>
           </span>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
