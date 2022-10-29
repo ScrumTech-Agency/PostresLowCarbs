@@ -2,11 +2,31 @@ import React, { Fragment } from 'react'
 import MetaData from './layout/MetaData'
 
 
+
 export const HomeAdmin = () => {
 
   return (
     <Fragment>
         <MetaData title="Productos WA">  </MetaData>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="http://localhost:3000/HomeAdmin">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="http://localhost:3000/ProductDetails">Modificar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="http://localhost:3000/Ventas">Ventas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         
         <section id="productos" className='container-mt-5'>
 
@@ -14,7 +34,7 @@ export const HomeAdmin = () => {
                 {/* producto 1 */}
                 <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
                     <div className='card p-3 rounded'>
-                        <img className='card-img-top mx-auto' src = './images/harinaAlmendra.jpeg' alt='Harina Almendra'></img>
+                        <img className='card-img-top mx-auto' src = './images/harinaAlmendras.jpg' alt='Harina Almendra'></img>
                         <div className='card-body d-flex flex-column'>
                             <h5 id='titulo_producto'><a href='http://localhost:3000'>Harina de Almendra 250 gr</a></h5>
                             <div className='rating mt-auto '>
@@ -33,7 +53,7 @@ export const HomeAdmin = () => {
                 {/* producto 2 */}
                 <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
                     <div className='card p-3 rounded'>
-                        <img className='card-img-top mx-auto' src = './images/harinaCoco.jpeg' alt='Harina de coco'></img>
+                        <img className='card-img-top mx-auto' src = './images/harinadeCoco.jpg' alt='Harina de coco'></img>
                         <div className='card-body d-flex flex-column'>
                             <h5 id='titulo_producto'><a href='http://localhost:3001'>Harina de coco 250 gr</a></h5>
                             <div className='rating mt-auto '>
@@ -52,7 +72,7 @@ export const HomeAdmin = () => {
                 {/* producto 3 */}
                 <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
                                     <div className='card p-3 rounded'>
-                                        <img className='card-img-top mx-auto' src = './images/keto1.jpeg' alt='Granola Keto Vainilla Canela'></img>
+                                        <img className='card-img-top mx-auto' src = './images/granolaVainilla.jpg' alt='Granola Keto Vainilla Canela'></img>
                                         <div className='card-body d-flex flex-column'>
                                             <h5 id='titulo_producto'><a href='http://localhost:3001'>Granola KETO Vainilla Canela 250 gr</a></h5>
                                             <div className='rating mt-auto '>
@@ -71,7 +91,7 @@ export const HomeAdmin = () => {
                   {/* producto 4 */}
                   <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
                                     <div className='card p-3 rounded'>
-                                        <img className='card-img-top mx-auto' src = './images/keto2.jpeg' alt='Granola KETO Chocolate'></img>
+                                        <img className='card-img-top mx-auto' src = './images/granolaChocolate.jpg' alt='Granola KETO Chocolate'></img>
                                         <div className='card-body d-flex flex-column'>
                                             <h5 id='titulo_producto'><a href='http://localhost:3001'> Granola KETO Chocolate 250 gr</a></h5>
                                             <div className='rating mt-auto '>

@@ -7,7 +7,6 @@ import Ventas from './components/Ventas';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductDetails } from "./components/products/ProductsDetails";
 import HomeAdmin from "./components/HomeAdmin";
-import { Menu } from "./components/layout/Menu";
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
     <Router>
     <div className="App">
         <Header />
-        <Menu />
         <div className='container container-fluid'>
           <Routes>
             <Route path="/" element={<Home />}/>

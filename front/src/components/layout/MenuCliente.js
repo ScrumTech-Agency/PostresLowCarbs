@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-export const Menu = () => {
+export const MenuCliente = () => {
   return (
     <Fragment>
 
@@ -13,10 +13,7 @@ export const Menu = () => {
           <a class="nav-link" aria-current="page" href="http://localhost:3000/HomeAdmin">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="http://localhost:3000/ProductDetails">Modificar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="http://localhost:3000/Ventas">Ventas</a>
+          <a class="nav-link" aria-current="page" href="#">Carrito</a>
         </li>
       </ul>
     </div>
@@ -27,4 +24,4 @@ export const Menu = () => {
   )
 }
 
-export default Menu;
+export default MenuCliente;
