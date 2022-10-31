@@ -19,12 +19,8 @@ export const Home = () => {
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="http://localhost:3000/HomeAdmin">Productos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="http://localhost:3000/ProductDetails">Modificar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="http://localhost:3000/Ventas">Ventas</a>
-                        </li>
+                        
+                        
                     </ul>
                 </div>
             </div>

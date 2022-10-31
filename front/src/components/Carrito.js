@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import MetaData from './layout/MetaData'
+import Table from "react-bootstrap/Table";
 
 
 
@@ -26,87 +27,47 @@ export const Carrito = () => {
         </nav>
 
         
-        <section id="productos" className='container-mt-5'>
+        <div className="contenedor d-flex flex-wrap align-content-center">
+    <div className="table responsive text-center">
+      <Table bordered hover>
+        <thead className ="table-danger">
+          <tr>
+            <th>imagen</th>
+            <th>Cantidad</th>
+            <th>producto</th>
+            <th>Valor</th>
+            
 
-            <div className='row'>
-                {/* producto 1 */}
-                <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-                    <div className='card p-3 rounded'>
-                        <img className='card-img-top mx-auto' src = './images/harinaAlmendras.jpg' alt='Harina Almendra'></img>
-                        <div className='card-body d-flex flex-column'>
-                            <h5 id='titulo_producto'><a href='http://localhost:3000'>Harina de Almendra 250 gr</a></h5>
-                            <div className='rating mt-auto '>
-                                <div className='rating-outer'>
-                                    <div className='rating-inner'></div>
-                                </div>
-                                <span id='No_de_opiniones'> 5 reviews</span>
-                            </div>
-                            <p className='card-text'> $ 20.000</p>
-                            <h7>Stock: 15</h7>
-                        </div>
-                    </div>
-                </div>
-                {/* Fin producto 1 */}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img className='card-img-top mx-auto' src = './images/harinaAlmendras.jpg' alt='Harina Almendra'></img></td>
+            <td>2</td>
+            <td>Harina de Almendra 250 gr</td>
+            <td>20000</td>
+          </tr>
+          <tr>
+          <td><img className='card-img-top mx-auto' src = './images/harinadeCoco.jpg' alt='Harina de coco'></img></td>
+            <td>2</td>
+            <td>Harina de Coco 250 gr</td>
+            <td>20000</td>
+          </tr>
+          </tbody>
+        <tfoot>
+          <td></td>
+          <td></td>
+          <td>Total</td>
+          <td>$40000</td>
+        </tfoot>
+      </Table>
+      <div class="d-grid gap-2 col-3 mx-auto" className='col-sm-12 col-md-6 col-lg-3 my-3'>
+      <a href='http://localhost:3000'id='view_btn' className='btn btn-block'> Finalizar Compra </a>
+      <a href='http://localhost:3000'id='view_btn' className='btn btn-block'> Cancelar </a>
 
-                {/* producto 2 */}
-                <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-                    <div className='card p-3 rounded'>
-                        <img className='card-img-top mx-auto' src = './images/harinadeCoco.jpg' alt='Harina de coco'></img>
-                        <div className='card-body d-flex flex-column'>
-                            <h5 id='titulo_producto'><a href='http://localhost:3001'>Harina de coco 250 gr</a></h5>
-                            <div className='rating mt-auto '>
-                                <div className='rating-outer'>
-                                    <div className='rating-inner'></div>
-                                </div>
-                                <span id='No_de_opiniones'> 2 reviews</span>
-                            </div>
-                            <p className='card-text'> $ 25.000</p>
-                            <h7>Stock: 18</h7>
-                        </div>
-                    </div>
-                </div>
-                {/* Fin producto 2 */}
-
-                {/* producto 3 */}
-                <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-                                    <div className='card p-3 rounded'>
-                                        <img className='card-img-top mx-auto' src = './images/granolaVainilla.jpg' alt='Granola Keto Vainilla Canela'></img>
-                                        <div className='card-body d-flex flex-column'>
-                                            <h5 id='titulo_producto'><a href='http://localhost:3001'>Granola KETO Vainilla Canela 250 gr</a></h5>
-                                            <div className='rating mt-auto '>
-                                                <div className='rating-outer'>
-                                                    <div className='rating-inner'></div>
-                                                </div>
-                                                <span id='No_de_opiniones'> 12 reviews</span>
-                                            </div>
-                                            <p className='card-text'> $ 30.000</p>
-                                            <h7>Stock: 20</h7>
-                                        </div>
-                                    </div>
-                                </div>
-                {/*Fin  producto 3 */}
-
-                  {/* producto 4 */}
-                  <div className='col-sm-12 col-md-6 col-lg-3 my-3'>
-                                    <div className='card p-3 rounded'>
-                                        <img className='card-img-top mx-auto' src = './images/granolaChocolate.jpg' alt='Granola KETO Chocolate'></img>
-                                        <div className='card-body d-flex flex-column'>
-                                            <h5 id='titulo_producto'><a href='http://localhost:3001'> Granola KETO Chocolate 250 gr</a></h5>
-                                            <div className='rating mt-auto '>
-                                                <div className='rating-outer'>
-                                                    <div className='rating-inner'></div>
-                                                </div>
-                                                <span id='No_de_opiniones'> 15 reviews</span>
-                                            </div>
-                                            <p className='card-text'> $35.000</p>
-                                            <h7>Stock: 55</h7>
-                                        </div>
-                                    </div>
-                                </div>
-                {/*Fin  producto 4 */}
-            </div>
-         </section>
-
+      </div>
+    </div>
+  </div>  
 
         
     </Fragment>
