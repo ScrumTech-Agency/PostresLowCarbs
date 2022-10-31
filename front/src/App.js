@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductDetails } from "./components/products/ProductsDetails";
 import HomeAdmin from "./components/HomeAdmin";
 import Carrito from "./components/Carrito";
+import HomeClient from "./components/HomeClient";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/producto/:id' element={<ProductDetails />}/>
             <Route path="/HomeAdmin" element={<HomeAdmin />}/>
             <Route path="/carrito" element={<Carrito />}/>
+            <Route path="/HomeClient" element={<HomeClient />}/>
           </Routes>
         </div>
         <Footer />
