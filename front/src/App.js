@@ -7,6 +7,7 @@ import Ventas from './components/Ventas';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProductDetails } from "./components/products/ProductsDetails";
 import HomeAdmin from "./components/HomeAdmin";
+import Carrito from "./components/Carrito";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Ventas" element={<Ventas />}/>
             <Route path='/producto/:id' element={<ProductDetails />}/>
             <Route path="/HomeAdmin" element={<HomeAdmin />}/>
+            <Route path="/carrito" element={<Carrito />}/>
           </Routes>
         </div>
         <Footer />
