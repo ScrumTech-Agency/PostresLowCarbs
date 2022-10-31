@@ -27,7 +27,7 @@ const Ventas = () => {
     
 
 
-  <div className="contenedor d-flex flex-wrap align-content-center">
+  <div className="contenedor d-flex flex-wrap align-content-center m-4 mt-4 py-4">
     <div className="table responsive text-center">
       <Table bordered hover>
         <thead className ="table-danger">
