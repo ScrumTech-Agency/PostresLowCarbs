@@ -61,7 +61,7 @@ export const Carrito = () => {
           <td>$40000</td>
         </tfoot>
       </Table>
-      <div class="d-grid gap-2 col-3 mx-auto" className='col-sm-12 col-md-6 col-lg-3 my-3'>
+      <div  className='d-grid gap-2 col-6 mx-auto' >
       <a href='http://localhost:3000'id='view_btn' className='btn btn-block'> Finalizar Compra </a>
       <a href='http://localhost:3000'id='view_btn' className='btn btn-block'> Cancelar </a>
 
