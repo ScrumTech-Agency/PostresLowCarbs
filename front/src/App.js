@@ -9,6 +9,8 @@ import { ProductDetails } from "./components/products/ProductsDetails";
 import HomeAdmin from "./components/HomeAdmin";
 import Carrito from "./components/Carrito";
 import HomeClient from "./components/HomeClient";
+import { ModificacionProducto } from "./components/ModificacionProducto";
+
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/HomeAdmin" element={<HomeAdmin />}/>
             <Route path="/carrito" element={<Carrito />}/>
             <Route path="/HomeClient" element={<HomeClient />}/>
+            <Route path="/ModificacionProducto" element={<ModificacionProducto />}/> 
+            
           </Routes>
         </div>
         <Footer />
