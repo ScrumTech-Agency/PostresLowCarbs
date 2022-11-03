@@ -18,7 +18,7 @@ const Header = () => {
               type="text"
               id="search_field"
               class="form-control"
-              placeholder="Buscar"
+              placeholder="Buscar Producto"
             ></input>
             <div class="input-group-append"></div>
           </div>
@@ -26,7 +26,7 @@ const Header = () => {
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
           <span>
             <button class="btn btn-sm" id="login_btn">
-              Iniciar Sesion 
+              INICIAR SESIÓN 
             </button>
           </span>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
