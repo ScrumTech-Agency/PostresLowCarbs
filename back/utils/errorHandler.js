@@ -1,5 +1,3 @@
-ErrorHandler
-
 class ErrorHandler extends Error{
   constructor (message, statusCode){
     this.statusCode= statusCode
