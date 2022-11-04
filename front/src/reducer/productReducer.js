@@ -6,12 +6,12 @@ import { ALL_PRODUCTS_REQUEST,
     PRODUCT_DETAILS_FAIL,
     CLEAR_ERRORS} from "../constans/productConstans";
 
-    export const productsReducer = (state ={ products: []}, action)=>{
+    export const productsReducer = (state ={ products: []}, action)=>{  //Aqui se trae un arreglo de productos
         switch(action.type){
             case ALL_PRODUCTS_REQUEST:
                 return{
-                    loading:true,
-                    products:[]
+                    loading:true, // 
+                    productos:[]
                 }
     
             case ALL_PRODUCTS_SUCCESS:

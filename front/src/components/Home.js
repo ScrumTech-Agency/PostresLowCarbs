@@ -1,173 +1,64 @@
 import React, { Fragment, useEffect } from 'react'
 import MetaData from './layout/MetaData'
-import { useDispatch } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { getProducts } from '../actions/productActions'
+import { Link } from 'react-router-dom'
+import { useAlert} from 'react-alert'
 
 export const Home = () => {
- const dispatch = useDispatch();
-    useEffect(()=>{
+    const { loading, productos, error} = useSelector(state=> state.products)
+    const alert= useAlert();
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (error){
+            return alert.error(error)
+        }
+
         dispatch(getProducts());
-    },[dispatch])
+        alert.success("OK")
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch])
 
-  return (
-    <Fragment>
-      <MetaData title="Productos WA"> </MetaData>
-      <nav class="nav navbar navbar-expand-lg navbar-light bg-white py-5">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto nav nav-tabs">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="http://localhost:3000/HomeAdmin"
-                >
-                  Lista Productos
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <h1 id="encabezado_producto">Ultimos productos</h1>
+    return (
+        <Fragment>
+            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
+                <Fragment>
+                    <MetaData title="Lo mejor para tu compañero"></MetaData>
+            <h1 id="encabezado_productos">Ultimos Productos</h1>
 
-      <section id="productos" className="container-mt-4">
-        <div className="row">
-          {/* producto 1 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/harinaAlmendras.jpg"
-                alt="Harina Almendra"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000/Carrito">
-                    Harina de Almendra 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 5 reviews</span>
-                </div>
-                <p className="card-text"> $ 20.000</p>
-                <a
-                  href="http://localhost:3001"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Fin producto 1 */}
+            <section id="productos" className='container mt-5'>
+                <div className='row'>
+                    {productos && productos.map (producto => (
+                        <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                        <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src={producto.imagen[0].url} alt={producto.imagen[0].public_id}></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><Link to={`/producto/${producto._id}`}>{producto.nombre}</Link></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner' style={{width: `${(producto.calificacion/5)*100}%`}}></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> {producto.numCalificaciones} Reviews</span>
+                                </div>
+                                <p className='card-text'>${producto.precio}</p><Link to={`/producto/${producto._id}`} id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
-          {/* producto 2 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/harinadeCoco.jpg"
-                alt="Harina de coco"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3001">Harina de coco 250 gr</a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 2 reviews</span>
-                </div>
-                <p className="card-text"> $ 25.000</p>
-                <a
-                  href="http://localhost:3001"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Fin producto 2 */}
+                    ))}
+                    </div>
+            </section>
 
-          {/* producto 3 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/granolaVainilla.jpg"
-                alt="Granola Keto Vainilla Canela"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000">
-                    Granola KETO Vainilla Canela 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 12 reviews</span>
-                </div>
-                <p className="card-text"> $ 30.000</p>
-                <a
-                  href="http://localhost:3000"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/*Fin  producto 3 */}
+                </Fragment>
 
-          {/* producto 4 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/granolaChocolate.jpg"
-                alt="Granola KETO Chocolate"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000">
-                    {" "}
-                    Granola KETO Chocolate 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 15 reviews</span>
-                </div>
-                <p className="card-text"> $35.000</p>
-                <a
-                  href="http://localhost:3000"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/*Fin  producto 4 */}
-        </div>
-      </section>
-    </Fragment>
-  );
+            )}
+            
+
+        </Fragment>
+    )
 }
-
 export default Home
