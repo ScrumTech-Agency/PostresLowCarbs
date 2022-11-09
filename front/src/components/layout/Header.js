@@ -39,7 +39,7 @@ const Header = () => {
               <span>Panel de Control</span>
             </Link>
             <div className="dropdown-menu" aria-labelledby="dropDownMenu">
-              <Link className="dropdown-item" to="/admin/dashboard">
+              <Link className="dropdown-item" to="/dashboard">
                 Admin Productos
               </Link>
               <Link className="dropdown-item" to="/">
@@ -54,13 +54,8 @@ const Header = () => {
             </div>
           </div>
 
-          <i
-            class="fa fa-shopping-cart fa-2x text-white"
-            aria-hidden="false"
-          ></i>
-          <span className="ml-1" id="cart_count">
-            2
-          </span>
+          <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
+                        <span className="ml-1" id="cart_count">2</span></Link>
         </div>
       </nav>
     </Fragment>
