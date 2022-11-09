@@ -47,3 +47,16 @@ exports.loginUser = catchAsyncErrors(async(req, res, next)=>{
   tokenEnviado(user,200,res)
 
 })
+
+//Cerrar Sesion (logout)
+exports.logOut = catchAsyncErrors(async(req, res, next)=>{
+  res.cookie("token",null, {
+       expires: new Date(Date.now()),
+       httpOnly: true
+  })
+
+  res.status(200).json({
+      success:true,
+      message: "Cerró sesión"
+  })
+})
