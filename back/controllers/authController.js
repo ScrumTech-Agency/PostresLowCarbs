@@ -17,8 +17,33 @@ exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
           url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp=CAU"
       }
   })
-  res.status(201).json({
-    success:true,
-    user
-  })
+
+tokenEnviado(user,201,res)
+
+})
+
+//Iniciar Sesion - Login
+exports.loginUser = catchAsyncErrors(async(req, res, next)=>{
+  const { email, password} =  req.body;
+
+  //revisar si los campos estan completos
+  if (!email || !password){
+      return next(new ErrorHandler("Por favor ingrese email & Contraseña", 400))
+  }
+
+  //Buscar  usuario en  base de datos
+  const user = await User.findOne({email}).select("+password")
+  if(!user){
+      return next(new ErrorHandler("Email o contraseña invalidos", 401))
+  }
+
+  //Comparar contraseñas, verificar si está OK
+  const contrasenaOK= await user.compararPass(password);
+
+  if (!contrasenaOK){
+      return next(new ErrorHandler("Contraseña invalida",401))
+  }
+
+  tokenEnviado(user,200,res)
+
 })
