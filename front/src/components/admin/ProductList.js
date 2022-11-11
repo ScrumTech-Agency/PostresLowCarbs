@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../actions/productActions";
+import {Link } from "react-router-dom"
 
 export const ProductList = () => {
   const { loading, productos, error } = useSelector((state) => state.products);
@@ -57,6 +58,19 @@ export const ProductList = () => {
         precio: `$${product.precio}`,
         inventario: product.inventario,
         vendedor: product.vendedor,
+        actions: <Fragment>
+                    <Link to={`/producto/${product._id}`} className="btn btn-primary py-1 px-2">
+                        <i className="fa fa-eye"></i>
+                    </Link><Link to="/" className="btn btn-warning py-1 px-2">
+                    <i class="fa fa-pencil"></i>
+                    </Link>
+
+                    <Link to="/" className="btn btn-danger py-1 px-2">
+                        <i className="fa fa-trash"></i>
+                    </Link>
+                    
+
+                </Fragment>
         
       });
     });
