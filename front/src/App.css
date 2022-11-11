@@ -27,7 +27,7 @@ body {
 }
 
 nav {
-  background-color: #3CE6AE;
+  background-color: #3ce6ae;
   padding: 1rem 1rem;
 }
 
@@ -46,10 +46,10 @@ f #search_field {
 
 #login_btn,
 #view_btn {
-  background-color: #dfaa9c;
+  background-color: #89f4d1;
   padding: 0.4rem 1.8rem;
   font-weight: bold;
-  font-family: roboto,sans-serif;
+  font-family: roboto, sans-serif;
 }
 
 #cart {
@@ -115,7 +115,7 @@ f #search_field {
 
 /* Footer */
 footer {
-  background-color: #3CE6AE;
+  background-color: #3ce6ae;
   position: absolute;
   margin-top: 8rem;
   color: black;
@@ -490,6 +490,7 @@ footer {
   align-items: stretch;
   min-height: 100vh;
   font-weight: normal;
+  margin: 0;
 
   margin-top: 0;
   height: 100%;
@@ -500,12 +501,13 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #232f3e;
-  color: #fff;
+  background: #dfaa9c;
+  color: black;
   transition: all 0.3s;
 }
 #sidebar.active {
   margin-left: -250px;
+  color: black;
 }
 
 #sidebar .sidebar-header {
@@ -514,19 +516,19 @@ footer {
 }
 #sidebar ul.components {
   padding: 5px 0px;
-  border-bottom: 1px solid #232f3e;
+  border-bottom: 1px solid #dfaa9c;
 }
 
 #sidebar ul li a {
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 #sidebar ul li a:hover {
-  color: #232f3e;
-  background: #fff;
+  color: black;
+  background: #89f4d1;
 }
 
 #sidebar ul li a i {
@@ -535,8 +537,8 @@ footer {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #232f3e;
+  color: black;
+  background: #89f4d1;
 }
 a[data-toggle="collapse"] {
   position: relative;
@@ -552,7 +554,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 1rem !important;
   padding-left: 30px !important;
-  background: #232f3e;
+  background: #dfaa9c;
 }
 
 ul.CTAs {
