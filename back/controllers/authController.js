@@ -15,10 +15,7 @@ exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
       nombre,
       email,
       password,
-      avatar:{
-          public_id:"ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp",
-          url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp=CAU"
-      }
+      
   })
 
 tokenEnviado(user,201,res)
