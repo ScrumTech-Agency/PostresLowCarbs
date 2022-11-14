@@ -28,6 +28,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/ProductList" element={<ProductList />} />
             <Route path="/NewProducto" element={<NewProduct />} />
+            <Route path="/search/:keyword" element={<Home />}/>
             <Route path="/carrito" element={<Cart />} />
             <Route path="/HomeAdmin" element={<HomeAdmin />} />
             <Route path="/HomeClient" element={<HomeClient />} />
