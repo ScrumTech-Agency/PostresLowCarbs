@@ -7,7 +7,7 @@ const ErrorHandler = require("../utils/errorHandler");
 //Ver la lista de productos
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-  const resPerPage = 4;
+  const resPerPage = 2;
   const productsCount = await producto.countDocuments();
 
   const apiFeatures = new APIFeatures(producto.find(), req.query)
@@ -155,36 +155,31 @@ exports.getProductsReviews = catchAsyncErrors(async (req, res, next) => {
 
 })
 
-//Metodo para eliminar review
+//Eliminar review
 exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
-
   const product = await producto.findById(req.query.idProducto);
 
-  const opiniones = product.opiniones.filter(opinion =>
-    opinion.id.toString() !== req.query.idReview.toString());
+  const opi = product.opiniones.filter(opinion =>
+      opinion._id.toString() !== req.query.idReview.toString());
 
-  const numCalificaciones = opiniones.length;
+  const numCalificaciones = opi.length;
 
-  const calificacion = product.opiniones.reduce((acc, Opinion) =>
-    Opinion.rating + acc, 0) / opiniones.length
+  const calificacion = opi.reduce((acc, Opinion) =>
+      Opinion.rating + acc, 0) / opi.length;
 
   await producto.findByIdAndUpdate(req.query.idProducto, {
-    opiniones,
-    calificacion,
-    numCalificaciones
-
+      opi,
+      calificacion,
+      numCalificaciones
   }, {
-
-    new: true,
-    runValidators: true,
-    useFindAndModify: false
+      new: true,
+      runValidators: true,
+      useFindAndModify: false
   })
-  req.status(200).json({
-    success: true,
-    message: "Review eliminada correctamente"
-
+  res.status(200).json({
+      success: true,
+      message: "review eliminada correctamente"
   })
-
 
 })
 

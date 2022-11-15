@@ -11,12 +11,12 @@ const Header = () => {
           <div className="navbar-brand"></div>
           <img src="../images/logo70f.png" alt="Logo Postres Low Carbs"></img>
         </div>
-        <div className="col-12 col-md-4 mt-2 mt-md-0">
-
-          <Search />
-          
-
-        </div>
+        <div className='col-12 col-md-4 mt-2 mt-md-0'>
+                 {/*Aqui va buscar*/}
+                 <Search />
+                </div>
+                {/*Boton inicio sesión*/}
+                <Link to="/login" className='btn ml-4' id="login_btn">Login</Link>
 
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center btn-group dropstart">
           <div className="ml-4 dropdown d-inline">
