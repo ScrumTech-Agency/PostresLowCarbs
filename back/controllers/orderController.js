@@ -106,5 +106,6 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next)=>{
 
 async function updateStock(id, quantity){
     const product = await Product.findById(id);
-    product.inventario= product
+    product.inventario= product.inventario-quantity;
+    await product.save({validateBeforeSave: false})
 }
