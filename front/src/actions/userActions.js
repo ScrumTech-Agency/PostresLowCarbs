@@ -25,7 +25,7 @@ import {
     NEW_PASSWORD_REQUEST,
     NEW_PASSWORD_SUCCESS,
     NEW_PASSWORD_FAIL
-} from "../constants/userConstants"
+} from "../constans/userConstants"
 
 //Login
 export const login = (email, password) => async (dispatch) => {
