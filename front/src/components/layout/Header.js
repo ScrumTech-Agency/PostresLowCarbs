@@ -14,6 +14,7 @@ const Header = () => {
 
   //const { cartItems } = useSelector(state => state.cart)
 
+  const { cartItems } = useSelector(state => state.cart)
   const alert = useAlert();
   const dispatch = useDispatch();
 
@@ -77,7 +78,7 @@ const Header = () => {
           </div>
 =======
           <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
-            <span className="ml-1" id="cart_count">2</span></Link>
+            <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
           {/* user ? esto traduce usuario esta logueado*/}
           {user ? (
             <div className="ml-4 dropdown d-inline">

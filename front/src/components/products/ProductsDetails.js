@@ -5,6 +5,7 @@ import { useParams} from 'react-router-dom';
 import { getProductDetails, clearErrors } from '../../actions/productActions';
 import {useAlert} from 'react-alert';
 import {Carousel} from 'react-bootstrap';
+import { addItemToCart } from '../../actions/cartActions';
 
 
 export const ProductDetails = () => {
@@ -44,6 +45,11 @@ export const ProductDetails = () => {
         setQuantity(qty)
     }
     
+    const addToCart = () => {
+        dispatch(addItemToCart(id, quantity));
+        alert.success('Producto agregado al carro')
+      }
+
     return (
     <Fragment>
         {loading ? <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
@@ -54,7 +60,7 @@ export const ProductDetails = () => {
                     <Carousel pause='hover'>
                         {product.imagen && product.imagen.map(img =>(
                             <Carousel.Item key={img.public_id}>
-                                <img className="d-block w-100" src={"../"+ img.url} alt={product.nombre}></img>
+                                <img className="d-block w-100" src={img.url} alt={product.nombre}></img>
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -77,7 +83,7 @@ export const ProductDetails = () => {
                         <input type='number' className='form-control count d-inline' value={quantity} readOnly></input> {/*readOnly sirve para evitar que el cliente escriba y deba pulsar el boton para elegir la cantidad de productos a llevar*/}
                         <span className='btn btn-primary plus' onClick={increaseQty}>+</span> {/*Boton para sumar producto */} 
                     </div>
-                    <button type="button" id='carrito_btn' className='btn btn-primary d-inline ml-4'disabled={product.inventario===0}>Agregar al Carrito</button>{/*Boton que se activa sólo cuando el inventario de productos sea diferente de cero */}
+                    <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>{/*Boton que se activa sólo cuando el inventario de productos sea diferente de cero */}
                     <hr />
                     <p>Estado: <span id='stock_estado' className={product.inventario > 0 ? 'greenColor' : 'redColor'}></span>{product.inventario > 0 ? 'En existencia' : 'Agotado'}</p>
                     <hr />
