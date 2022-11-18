@@ -1,13 +1,14 @@
-const { json } = require("body-parser");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const producto = require("../models/productos");
 const APIFeatures = require("../utils/apiFeatures");
 const ErrorHandler = require("../utils/errorHandler");
+const fetch = (url) => import('node-fetch').then(({ default: fetch }) => fetch(url)); //Usurpación del require
+const cloudinary=require("cloudinary")
 
 //Ver la lista de productos
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-  const resPerPage = 2;
+  const resPerPage = 4;
   const productsCount = await producto.countDocuments();
 
   const apiFeatures = new APIFeatures(producto.find(), req.query)
@@ -73,6 +74,30 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 
 //Crear nuevo producto /api/productos
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
+  
+  /* //PARA CARGAR IMÁGENES, PERO GENERA UN ERROR DE LENGTH
+  let imagen=[]
+  if(typeof req.body.imagen==="string"){
+      imagen.push(req.body.imagen)
+  }else{
+      imagen=req.body.imagen
+  }
+
+  let imagenLink=[]
+
+  for (let i=0; i<imagen.length;i++){
+      const result = await cloudinary.v2.uploader.upload(imagen[i],{
+          folder:"products"
+      })
+      imagenLink.push({
+          public_id:result.public_id,
+          url: result.secure_url
+      })
+  }
+
+  req.body.imagen=imagenLink
+  */
+
   req.body.user = req.user.id;
   const product = await producto.create(req.body);
 
