@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "../../App.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -26,6 +26,16 @@ const Header = () => {
         </div>
 
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center btn-group dropstart">
+          <Link to="/carrito">
+            <i
+              class="fa fa-shopping-cart fa-2x text-white"
+              aria-hidden="false"
+            ></i>
+            <span className="ml-1" id="cart_count">
+              2
+            </span>
+          </Link>
+
           <div className="ml-4 dropdown d-inline">
             <Link
               to="#!"
@@ -53,9 +63,6 @@ const Header = () => {
               </Link>
             </div>
           </div>
-
-          <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
-                        <span className="ml-1" id="cart_count">2</span></Link>
         </div>
       </nav>
     </Fragment>

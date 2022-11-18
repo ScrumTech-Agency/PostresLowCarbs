@@ -1,3 +1,6 @@
+
+
+
 html,
 body {
   font-family: "Amazon Ember";
@@ -581,6 +584,8 @@ ul.CTAs a {
   font-size: 1.5rem;
 }
 
+
+
 /* Reviews */
 
 .rating {
@@ -617,4 +622,28 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+
+.card1{
+  background:#9ADBC8;
+}
+
+.card2{
+  background: #BADBBF;
+}
+
+.card3{
+  background: #DBB9AF;
+}
+
+.card4{
+  background: #64848F;
+}
+
+.card5{
+  background: #A4CEDB;
+  }
+
+.card-footer{
+  color: black;
 }
