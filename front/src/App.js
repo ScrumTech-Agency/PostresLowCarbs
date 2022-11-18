@@ -10,7 +10,7 @@ import HomeAdmin from "./components/HomeAdmin";
 import HomeClient from "./components/HomeClient";
 import { ModificacionProducto } from "./components/ModificacionProducto";
 import Dashboard from "./components/admin/Dashboard";
-import ProductList from "./components/admin/ProductList";
+import ProductsList from "./components/admin/ProductList";
 import NewProduct from "./components/admin/NewProduct";
 import Cart from "./components/cart/Cart";
 import { Login } from "./components/user/Login";
@@ -19,6 +19,7 @@ import { loadUser } from './actions/userActions';
 import store from "./store"
 import { Profile } from './components/user/Profile';
 import ProtectedRoute from './routes/ProtectedRoute';
+
 
 function App() {
   useEffect(() => {
@@ -34,7 +35,7 @@ function App() {
             <Route path="/Home" element={<Home />} />
             <Route path="/Ventas" element={<Ventas />} />
             <Route path="/producto/:id" element={<ProductDetails />} />
-            <Route path="/ProductList" element={<ProductList />} />
+            <Route path="/ProductList" element={<ProductsList />} />
             <Route path="/NewProducto" element={<NewProduct />} />
             <Route path="/search/:keyword" element={<Home />}/>
             <Route path="/carrito" element={<Cart />} />
