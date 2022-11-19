@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearErrors, getProductDetails, updateProduct } from '../../actions/productActions'
-import { UPDATE_PRODUCT_RESET } from '../../constants/productConstants'
+import { UPDATE_PRODUCT_RESET } from '../../constans/productConstants'
 import { useNavigate, useParams } from 'react-router-dom'
 
 export const UpdateProduct = () => {
