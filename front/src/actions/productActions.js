@@ -17,9 +17,9 @@ import {
     DELETE_PRODUCT_SUCCESS,
     DELETE_PRODUCT_FAIL,
     UPDATE_PRODUCT_REQUEST,
-    UPDATE_PRODUCT_SUCCESS
-} from '../constans/productConstans';
-import { NEW_PASSWORD_SUCCESS, UPDATE_PASSWORD_SUCCESS } from '../constans/userConstants';
+    UPDATE_PRODUCT_SUCCESS,
+    UPDATE_PRODUCT_FAIL
+} from '../constans/productConstants';
 
 
 export const getProducts = ( currentPage =1, keyword='', precio) => async(dispatch)=>{
