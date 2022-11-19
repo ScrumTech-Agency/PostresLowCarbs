@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { newProduct, clearErrors } from '../../actions/productActions'
 
 import { useNavigate } from 'react-router-dom'
-import { NEW_PRODUCT_RESET } from '../../constans/productConstans'
+import { NEW_PRODUCT_RESET } from '../../constans/productConstants'
 
 const NewProduct = () => {
     const navigate= useNavigate()

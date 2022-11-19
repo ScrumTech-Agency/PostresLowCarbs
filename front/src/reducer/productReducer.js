@@ -18,7 +18,7 @@ import { ALL_PRODUCTS_REQUEST,
     UPDATE_PRODUCT_REQUEST,
     UPDATE_PRODUCT_SUCCESS,
     UPDATE_PRODUCT_FAIL,
-    UPDATE_PRODUCT_RESET} from "../constans/productConstans";
+    UPDATE_PRODUCT_RESET} from "../constans/productConstants";
 
     export const productsReducer = (state ={ products: []}, action)=>{  //Aqui se trae un arreglo de productos
         switch(action.type){
