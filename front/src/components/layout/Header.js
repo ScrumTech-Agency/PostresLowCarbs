@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
 import "../../App.css";
-<<<<<<< HEAD
+
 import { Link } from "react-router-dom";
-=======
-import { Link } from "react-router-dom"
+
 import Search from "./Search";
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { logout } from "../../actions/userActions"
->>>>>>> f2913924a3db7407547784d3370a9b03f8b68b16
+
 
 const Header = () => {
 
@@ -38,7 +37,7 @@ const Header = () => {
         </div>
         {/*Boton inicio sesión*/}
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center btn-group dropstart">
-<<<<<<< HEAD
+
           <Link to="/carrito">
             <i
               class="fa fa-shopping-cart fa-2x text-white"
@@ -76,7 +75,7 @@ const Header = () => {
               </Link>
             </div>
           </div>
-=======
+
           <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
             <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
           {/* user ? esto traduce usuario esta logueado*/}
