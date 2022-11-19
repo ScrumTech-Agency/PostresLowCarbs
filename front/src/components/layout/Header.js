@@ -1,10 +1,13 @@
 import React, { Fragment } from "react";
 import "../../App.css";
-import { Link } from "react-router-dom"
+
+import { Link } from "react-router-dom";
+
 import Search from "./Search";
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
 import { logout } from "../../actions/userActions"
+
 
 const Header = () => {
 
@@ -34,6 +37,45 @@ const Header = () => {
         </div>
         {/*Boton inicio sesión*/}
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center btn-group dropstart">
+
+          <Link to="/carrito">
+            <i
+              class="fa fa-shopping-cart fa-2x text-white"
+              aria-hidden="false"
+            ></i>
+            <span className="ml-1" id="cart_count">
+              2
+            </span>
+          </Link>
+
+          <div className="ml-4 dropdown d-inline">
+            <Link
+              to="#!"
+              className="btn dropdown-toggle text-black mr-4"
+              type="button"
+              id="dropDownMenu"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span>Panel de Control</span>
+            </Link>
+            <div className="dropdown-menu" aria-labelledby="dropDownMenu">
+              <Link className="dropdown-item" to="/dashboard">
+                Admin Productos
+              </Link>
+              <Link className="dropdown-item" to="/">
+                Pedidos
+              </Link>
+              <Link className="dropdown-item" to="/">
+                Mi cuenta
+              </Link>
+              <Link className="dropdown-item" to="/">
+                Cerrar Sesion
+              </Link>
+            </div>
+          </div>
+
           <Link to="/carrito"><i class="fa fa-shopping-cart fa-2x text-white" aria-hidden="false"></i>
             <span className="ml-1" id="cart_count">{cartItems.length}</span></Link>
           {/* user ? esto traduce usuario esta logueado*/}
@@ -76,6 +118,7 @@ const Header = () => {
 
 
 
+>>>>>>> f2913924a3db7407547784d3370a9b03f8b68b16
         </div>
       </nav>
     </Fragment>

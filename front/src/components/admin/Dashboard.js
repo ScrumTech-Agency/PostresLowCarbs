@@ -18,7 +18,7 @@ export const Dashboard = () => {
             <MetaData title={"Panel de Control"} />
             <div className="row pr-4">
               <div className="col-xl-12 col-sm-12 mb-3 py-3">
-                <div className="card text-white bg-primary o-hidden h-100">
+                <div className="card1 text-black o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Monto Total
@@ -29,7 +29,7 @@ export const Dashboard = () => {
               </div>
 
               <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white bg-success o-hidden h-100">
+                <div className="card text-black card2 o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Productos
@@ -37,7 +37,7 @@ export const Dashboard = () => {
                     </div>
                   </div>
                   <Link
-                    className="card-footer text-white clearfix small z-1"
+                    className="card-footer clearfix small z-1"
                     to="/"
                   >
                     <span className="float-left">Ver Detalles</span>
@@ -49,7 +49,7 @@ export const Dashboard = () => {
               </div>
 
               <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white bg-info o-hidden h-100">
+                <div className="card text-black card3  h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Pedidos
@@ -57,7 +57,7 @@ export const Dashboard = () => {
                     </div>
                   </div>
                   <Link
-                    className="card-footer text-white clearfix small z-1"
+                    className="card-footer clearfix small z-1"
                     to="/"
                   >
                     <span className="float-left">Ver Detalles</span>
@@ -69,7 +69,7 @@ export const Dashboard = () => {
               </div>
 
               <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white bg-warning o-hidden h-100">
+                <div className="card text-black card4 o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Usuarios
@@ -77,7 +77,7 @@ export const Dashboard = () => {
                     </div>
                   </div>
                   <Link
-                    className="card-footer text-white clearfix small z-1"
+                    className="card-footer clearfix small z-1"
                     to="/"
                   >
                     <span className="float-left">Ver Detalles</span>
@@ -89,7 +89,7 @@ export const Dashboard = () => {
               </div>
 
               <div className="col-xl-3 col-sm-6 mb-3">
-                <div className="card text-white bg-danger o-hidden h-100">
+                <div className="card text-black card5 o-hidden h-100">
                   <div className="card-body">
                     <div className="text-center card-font-size">
                       Agotados
@@ -97,7 +97,7 @@ export const Dashboard = () => {
                     </div>
                   </div>
                   <Link
-                    className="card-footer text-white clearfix small z-1"
+                    className="card-footer clearfix small z-1"
                     to="/"
                   >
                     <span className="float-left">Ver Detalles</span>
