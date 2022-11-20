@@ -11,16 +11,16 @@ import {
     ADMIN_PRODUCTS_REQUEST,
     ADMIN_PRODUCTS_SUCCESS,
     ADMIN_PRODUCTS_FAIL,
-    NEW_PASSWORD_SUCCESS,
-    NEW_PRODUCT_REQUEST,
-    NEW_PRODUCT_FAIL,
     DELETE_PRODUCT_REQUEST,
     DELETE_PRODUCT_SUCCESS,
     DELETE_PRODUCT_FAIL,
     UPDATE_PRODUCT_REQUEST,
     UPDATE_PRODUCT_SUCCESS,
-    UPDATE_PRODUCT_FAIL
+    UPDATE_PRODUCT_FAIL,
+    NEW_PRODUCT_REQUEST,
+    NEW_PRODUCT_FAIL
 } from '../constans/productConstants';
+import{NEW_PASSWORD_SUCCESS } from '../constans/userConstants'
 
 
 export const getProducts = ( currentPage =1, keyword='', precio) => async(dispatch)=>{
