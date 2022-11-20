@@ -18,9 +18,10 @@ import {
     UPDATE_PRODUCT_SUCCESS,
     UPDATE_PRODUCT_FAIL,
     NEW_PRODUCT_REQUEST,
+    NEW_PRODUCT_SUCCESS,
     NEW_PRODUCT_FAIL
 } from '../constans/productConstants';
-import{NEW_PASSWORD_SUCCESS } from '../constans/userConstants'
+
 
 
 export const getProducts = ( currentPage =1, keyword='', precio) => async(dispatch)=>{
@@ -77,7 +78,7 @@ export const newProduct = ( productData ) => async (dispatch)=>{
         const {data} = await axios.post('/api/producto/nuevo', productData, config)
 
         dispatch({
-            type: NEW_PASSWORD_SUCCESS,
+            type: NEW_PRODUCT_SUCCESS,
             payload: data
         })
     }catch(error){
