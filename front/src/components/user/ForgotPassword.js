@@ -40,7 +40,7 @@ export const ForgotPassword = () => {
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mb-3">Olvide mi contraseña</h1>
+                        <h2 className="mb-5 text-center">Restablecer Contraseña</h2>
                         <div className="form-group">
                             <label htmlFor="email_field">Email registrado</label>
                             <input
@@ -57,7 +57,7 @@ export const ForgotPassword = () => {
                             type="submit"
                             className="btn btn-block py-3"
                             disabled={loading ? true : false} >
-                            Recuperar contraseña
+                            Restablecer
                     </button>
 
                     </form>

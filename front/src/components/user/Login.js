@@ -35,7 +35,7 @@ export const Login = () => {
                     <div className='row wrapper'>
                         <div className='col-10 col-lg-5'>
                             <form className='shadow-lg' onSubmit={submitHandler}>
-                                <h1 className='mb-3'>Inicio de Sesión</h1>
+                                <h2 className='mb-5 text-center'>Iniciar Sesión</h2>
                                 {/*Campo para email*/}
                                 <div className='form-group'>
                                     <label htmlFor='email_field'>Correo electrónico</label>
@@ -56,12 +56,12 @@ export const Login = () => {
                                     ></input>
                                 </div>
 
-                                <Link to="/password/forgot" className='float-right mb-4'>Olvidó su contraseña?</Link>
+                                <Link to="/password/forgot" className='float-right mb-4'>¿Olvidaste tu contraseña?</Link>
 
                                 {/*Boton iniciar sesiòn*/}
-                                <button id="login_button" type="submit" className='btn btn-block py-3'>LOGIN</button>
+                                <button id="login_button" type="submit" className='btn btn-block py-3 mb-4'>LOGIN</button>
 
-                                <Link to="/register" className='float-right mt-3'>Usuario nuevo? Registrese aquí</Link>
+                                <Link to="/register" className='float-right mb-4'>¿Eres un usuario nuevo? Registrate aquí</Link>
 
                             </form>
                         </div>

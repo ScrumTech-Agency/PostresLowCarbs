@@ -52,7 +52,7 @@ export const ModificacionProducto = () => {
           <button
             type="button"
             id="carrito_btn"
-            className="btn btn-success  mt-4 ml-6"
+            className="btn1 mt-4 ml-6"
           >
             Subir una Imagen
           </button>
@@ -90,14 +90,14 @@ export const ModificacionProducto = () => {
           <button
             type="button"
             id="carrito_btn"
-            className="btn btn-primary d-inline ml-4"
+            className="btn2 d-inline ml-4"
           >
             Guardar
           </button>
           <button
             type="button"
             id="carrito_btn"
-            className="btn btn-danger d-inline ml-4"
+            className="btn3 d-inline ml-4"
           >
             Cancelar
           </button>

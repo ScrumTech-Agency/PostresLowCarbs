@@ -47,7 +47,7 @@ export const NewPassword = () => {
     <div className="row wrapper">
         <div className="col-10 col-lg-5">
             <form className="shadow-lg" onSubmit={submitHandler}>
-                <h1 className="mb-3">Nueva Password</h1>
+                <h3 className="mb-3 text-center">Nueva Password</h3>
 
                 <div className="form-group">
                     <label htmlFor="password_field">Contraseña</label>

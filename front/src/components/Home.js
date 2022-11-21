@@ -42,7 +42,7 @@ export const Home = () => {
 
                 <Slider
                                 range
-                                className='t-slider'
+                                className='t-slider mb-3'
                                 marks={{
                                     100: `$100`,
                                     1000000: `$1000000`

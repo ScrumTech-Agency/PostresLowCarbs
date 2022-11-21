@@ -48,7 +48,7 @@ const submitHandler= (e)=>{
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mt-2 mb-5">Actualizar Contraseña</h1>
+                        <h2 className="mt-2 mb-5 text-center">Actualizar Contraseña</h2>
                         <div className="form-group">
                             <label for="old_password_field">Contraseña Anterior</label>
                             <input

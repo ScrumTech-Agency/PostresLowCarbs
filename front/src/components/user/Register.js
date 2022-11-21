@@ -65,7 +65,7 @@ export const Register = () => { //emaquetar información, nueva forma
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
                             <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'> {/*multipart/form-data */}
-                                <h1 className="mb-3">Registrar</h1>
+                                <h1 className="mb-4 text-center">Registrar</h1>
 
                                 <div className="form-group">
                                     <label htmlFor="name_field">Nombre</label>
@@ -124,7 +124,7 @@ export const Register = () => { //emaquetar información, nueva forma
                                                 onChange={onChange}
                                             />
                                             <label className='custom-file-label' htmlFor='customFile'>
-                                                Escoger Avatar
+                                                Seleccionar Imagen
                                             </label>
                                         </div>
                                     </div>
