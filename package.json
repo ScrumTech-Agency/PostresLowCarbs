@@ -4,9 +4,6 @@
   "description": "Tienda Virtual de Productos Bajos en Carbohidratos",
   "main": "server.js",
   
-
-
-  
   "scripts": {
     "start": "node back/server.js",
     "dev": "set NODE_ENV=DEVELOPMENT& nodemon back/server",
@@ -14,10 +11,6 @@
     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false && NODE_OPTIONS=--openssl-legacy-provider && npm install --force --prefix front && npm run build --prefix front"
 
   },
-  "engines": {
-    "node": "16.x"
-  },    
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ScrumTech-Agency/PostresLowCarbs.git"
