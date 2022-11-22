@@ -1,42 +1,98 @@
 import React, { Fragment } from "react";
 import "../../App.css";
 
+import { Link } from "react-router-dom";
+
+import Search from "./Search";
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout } from "../../actions/userActions"
+
+
 const Header = () => {
+
+  //const { cartItems } = useSelector(state => state.cart)
+
+  const { cartItems } = useSelector(state => state.cart)
+  const alert = useAlert();
+  const dispatch = useDispatch();
+
+  const { user, loading } = useSelector(state => state.auth)
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    alert.success("LogOut exitoso")
+  }
+
   return (
     <Fragment>
       <nav className="navbar row">
         <div className="col-12 col-md-3">
           <div className="navbar-brand"></div>
-          <img src="./images/logo70f.png" alt="Logo Postres Low Carbs"></img>
+          <img src="../images/logo70f.png" alt="Logo Postres Low Carbs"></img>
         </div>
         <div className="col-12 col-md-4 mt-2 mt-md-0">
-          <div className="input-group">
-            <button id="search-btn" class="btn">
-              <i class="fa fa-search fa-2x text-white" aria-hidden="true"></i>
-            </button>
-            <input
-              type="text"
-              id="search_field"
-              class="form-control"
-              placeholder="Buscar Producto"
-            ></input>
-            <div class="input-group-append"></div>
-          </div>
+          {/*Aqui va buscar*/}
+          <Search />
         </div>
-        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-          <span>
-            <button class="btn btn-sm" id="login_btn">
-              INICIAR SESIÓN 
-            </button>
-          </span>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <i
-            class="fa fa-shopping-cart fa-2x text-white"
-            aria-hidden="false"
-          ></i>
-          <span className="ml-1" id="cart_count">
-            2
-          </span>
+        {/*Boton inicio sesión*/}
+        <div className="col-12 col-md-2 mt-2 mt-md-0 text-center btn-group dropstart">
+          <Link to="/carrito">
+            <i
+              class="fa fa-shopping-cart fa-2x text-white"
+              aria-hidden="false"
+            ></i>
+            <span className="ml-1" id="cart_count">
+              {cartItems.length}
+            </span>
+          </Link>
+          {/* user ? esto traduce usuario esta logueado*/}
+          {user ? (
+            <div className="ml-4 dropdown d-inline">
+              <Link
+                to="#!"
+                className="btn dropdown-toggle text-black mr-4"
+                type="button"
+                id="dropDownMenu"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <figure className="avatar avatar-nav">
+                  <img
+                    src={user.avatar && user.avatar.url}
+                    alt={user && user.nombre}
+                    className="rounded-circle"
+                  ></img>
+                </figure>
+                <span>{user && user.nombre}</span>
+              </Link>
+              <div className="dropdown-menu" aria-labelledby="dropDownMenu">
+                {/*Preguntamos el rol de quien esta online*/}
+                {user && user.role === "admin" && (
+                  <Link className="dropdown-item" to="/dashboard">
+                    Admin Productos
+                  </Link>
+                )}
+
+                <Link className="dropdown-item" to="/myOrders">
+                  Pedidos
+                </Link>
+                <Link className="dropdown-item" to="/yo">
+                  Mi Perfil
+                </Link>
+                <Link className="dropdown-item" to="/" onClick={logoutHandler}>
+                  Cerrar Sesion
+                </Link>
+              </div>
+            </div>
+          ) : (
+            !loading && (
+              <Link to="/login" className="btn ml-4" id="login_btn">
+                Login
+              </Link>
+            )
+          )}
         </div>
       </nav>
     </Fragment>

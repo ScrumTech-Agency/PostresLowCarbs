@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-export const ModificacionProducto = () => {
+const CrearProducto = () => {
   return (
     <Fragment>
+
       <nav class="nav navbar navbar-expand-lg navbar-light bg-white py-5">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -35,12 +36,12 @@ export const ModificacionProducto = () => {
           <strong className="mt-2"> Productos</strong>
           <hr />
 
-          <li>Producto #1</li>
-          <li>Producto #2</li>
-          <li>Producto #3</li>
-          <li>Producto #4</li>
-          <li>Producto #5</li>
-          <li>Producto #6</li>
+          <li>Granola Vainilla</li>
+          <li>Granola Chocolate</li>
+          <li>Cranola Coco</li>
+          <li>Harina Almendras</li>
+          <li>Harina de Coco</li>
+          <li>Chocolate</li>
         </div>
         <div className="col-12 col-lg mt-2 img-fluid" id="imagen_producto">
           <img
@@ -52,10 +53,12 @@ export const ModificacionProducto = () => {
           <button
             type="button"
             id="carrito_btn"
-            className="btn1 mt-4 ml-6"
+            className="btn btn-success  mt-4 ml-4"
           >
-            Subir una Imagen
+            Subir Imagen
+          
           </button>
+          
         </div>
         <div className="col-12 col-lg">
           <h5 className="mt-0">Nombre del producto:</h5>
@@ -90,19 +93,28 @@ export const ModificacionProducto = () => {
           <button
             type="button"
             id="carrito_btn"
-            className="btn2 d-inline ml-4"
-          >
-            Guardar
-          </button>
-          <button
-            type="button"
-            id="carrito_btn"
-            className="btn3 d-inline ml-4"
+            className="btn btn-danger d-inline ml-4"
           >
             Cancelar
           </button>
+
+          <button
+            type="button"
+            id="carrito_btn"
+            className="btn btn-success d-inline ml-4"
+          >
+            Crear Producto
+          </button>
+          
+
+          
+          
         </div>
       </div>
+
+
     </Fragment>
-  );
-};
+  )
+}
+
+export default CrearProducto

@@ -1,173 +1,109 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import MetaData from './layout/MetaData'
-import { useDispatch } from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { getProducts } from '../actions/productActions'
+import { Link, useParams } from 'react-router-dom'
+import { useAlert} from 'react-alert'
+import Pagination from 'react-js-pagination'
+import Slider from "rc-slider"
+import 'rc-slider/assets/index.css'
 
 export const Home = () => {
- const dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(getProducts());
-    },[dispatch])
+    const params = useParams();
+    const keyword = params.keyword;
+    const [precio, setPrecio] = useState([100, 1000000])
+    const [currentPage, setCurrentPage] = useState(1)
+    const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.products)
+    const alert = useAlert();
 
-  return (
-    <Fragment>
-      <MetaData title="Productos WA"> </MetaData>
-      <nav class="nav navbar navbar-expand-lg navbar-light bg-white py-5">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto nav nav-tabs">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="http://localhost:3000/HomeAdmin"
-                >
-                  Lista Productos
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (error) {
+            return alert.error(error)
+        }
 
-      <h1 id="encabezado_producto">Ultimos productos</h1>
+        dispatch(getProducts(currentPage, keyword, precio));
+    }, [dispatch, alert, error, currentPage, keyword, precio])
 
-      <section id="productos" className="container-mt-4">
-        <div className="row">
-          {/* producto 1 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/harinaAlmendras.jpg"
-                alt="Harina Almendra"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000/Carrito">
-                    Harina de Almendra 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 5 reviews</span>
-                </div>
-                <p className="card-text"> $ 20.000</p>
-                <a
-                  href="http://localhost:3001"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
+    function setCurrentPageNo(pageNumber) {
+        setCurrentPage(pageNumber)
+    }
+
+
+    return (
+        <Fragment>
+            {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
+                <Fragment>
+                    <MetaData title="Lo mejor para tu compañero"></MetaData>
+            <h1 id="encabezado_productos">Últimos Productos</h1>
+
+            <section id="productos" className='container mt-5'>
+                <div className='row'>
+
+                <Slider
+                                range
+                                className='t-slider mb-3'
+                                marks={{
+                                    100: `$100`,
+                                    1000000: `$1000000`
+                                }}
+                                min={100}
+                                max={1000000}
+                                defaultValue={[100, 1000000]}
+                                tipFormatter={value => `$${value}`}
+                                tipProps={{
+                                    placement: 'top',
+                                    prefixCls: 'rc-slider-tooltip',
+                                    visible: true
+                                }}
+                                value={precio}
+                                onChange={precio => setPrecio(precio)}
+                            ></Slider>
+                            
+                    {products && products.map (producto => (
+                        <div key={producto._id} className='col-sm-12 col-md-6 col-lg-3 my-3'>
+                        <div className='card p-3 rounded'>
+                            <img className='card-img-top mx-auto' src={producto.imagen[0].url} alt={producto.imagen[0].public_id}></img>
+                            <div className='card-body d-flex flex-column'>
+                                <h5 id="titulo_producto"><Link to={`/producto/${producto._id}`}>{producto.nombre}</Link></h5>
+                                <div className='rating mt-auto'>
+                                    <div className='rating-outer'>
+                                        <div className='rating-inner' style={{width: `${(producto.calificacion/5)*100}%`}}></div>
+                                    </div>
+                                    <span id="No_de_opiniones"> {producto.numCalificaciones} Reviews</span>
+                                </div>
+                                <p className='card-text'>${producto.precio}</p><Link to={`/producto/${producto._id}`} id="view_btn" className='btn btn-block'>
+                                    Ver detalle
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    ))}
+                    </div>
+            </section>
+            
+            <div className='d-flex justify-content-center mt-5'>
+                        <Pagination
+                        activePage={currentPage}
+                        itemsCountPerPage={resPerPage}
+                        totalItemsCount={productsCount}
+                        onChange={setCurrentPageNo}
+                        nextPageText={'Siguiente'}
+                        prevPageText={'Anterior'}
+                        firstPageText={'Primera'}
+                        lastPageText={'Ultima'}
+                        itemClass='page-item'
+                        linkClass='page-link'
+                        />
             </div>
-          </div>
-          {/* Fin producto 1 */}
 
-          {/* producto 2 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/harinadeCoco.jpg"
-                alt="Harina de coco"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3001">Harina de coco 250 gr</a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 2 reviews</span>
-                </div>
-                <p className="card-text"> $ 25.000</p>
-                <a
-                  href="http://localhost:3001"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Fin producto 2 */}
+                </Fragment>
 
-          {/* producto 3 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/granolaVainilla.jpg"
-                alt="Granola Keto Vainilla Canela"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000">
-                    Granola KETO Vainilla Canela 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 12 reviews</span>
-                </div>
-                <p className="card-text"> $ 30.000</p>
-                <a
-                  href="http://localhost:3000"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/*Fin  producto 3 */}
+            )}
+            
 
-          {/* producto 4 */}
-          <div className="col-sm-12 col-md-6 col-lg-3 my-3">
-            <div className="card p-3 rounded">
-              <img
-                className="card-img-top mx-auto"
-                src="./images/granolaChocolate.jpg"
-                alt="Granola KETO Chocolate"
-              ></img>
-              <div className="card-body d-flex flex-column">
-                <h5 id="titulo_producto">
-                  <a href="http://localhost:3000">
-                    {" "}
-                    Granola KETO Chocolate 250 gr
-                  </a>
-                </h5>
-                <div className="rating mt-auto ">
-                  <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
-                  <span id="No_de_opiniones"> 15 reviews</span>
-                </div>
-                <p className="card-text"> $35.000</p>
-                <a
-                  href="http://localhost:3000"
-                  id="view_btn"
-                  className="btn btn-block"
-                >
-                  Ver Detalles
-                </a>
-              </div>
-            </div>
-          </div>
-          {/*Fin  producto 4 */}
-        </div>
-      </section>
-    </Fragment>
-  );
+        </Fragment>
+    )
 }
-
 export default Home

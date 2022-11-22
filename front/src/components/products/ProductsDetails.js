@@ -5,6 +5,7 @@ import { useParams} from 'react-router-dom';
 import { getProductDetails, clearErrors } from '../../actions/productActions';
 import {useAlert} from 'react-alert';
 import {Carousel} from 'react-bootstrap';
+import { addItemToCart } from '../../actions/cartActions';
 
 
 export const ProductDetails = () => {
@@ -44,19 +45,22 @@ export const ProductDetails = () => {
         setQuantity(qty)
     }
     
+    const addToCart = () => {
+        dispatch(addItemToCart(id, quantity));
+        alert.success('Producto agregado al carro')
+      }
 
-  return (
+    return (
     <Fragment>
-        {loading ? <i className='fa fa-refresh fa-spin fa-3x fa-fw'></i> :(
+        {loading ? <i className="fa fa-refresh fa-spin fa-3x fa-fw"></i> :(
             <Fragment>
             <MetaData title={product.nombre}></MetaData>
             <div className='row d-flex justify-content-around'>
                 <div className='col-12 col-lg-5 img-fluid' id="imagen_producto">
-                    <img src='..\images\harinaAlmendra.jpeg' alt="imagen del proucto" height="450" width="450"></img> 
                     <Carousel pause='hover'>
                         {product.imagen && product.imagen.map(img =>(
                             <Carousel.Item key={img.public_id}>
-                                <img className='d-block w-100' src={"../"+ img.url} alt={product.nombre}></img>
+                                <img className="d-block w-100" src={img.url} alt={product.nombre}></img>
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -79,7 +83,7 @@ export const ProductDetails = () => {
                         <input type='number' className='form-control count d-inline' value={quantity} readOnly></input> {/*readOnly sirve para evitar que el cliente escriba y deba pulsar el boton para elegir la cantidad de productos a llevar*/}
                         <span className='btn btn-primary plus' onClick={increaseQty}>+</span> {/*Boton para sumar producto */} 
                     </div>
-                    <button type="button" id='carrito_btn' className='btn btn-primary d-inline ml-4'disabled={product.inventario===0}>Agregar al Carrito</button>{/*Boton que se activa sólo cuando el inventario de productos sea diferente de cero */}
+                    <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0} onClick={addToCart}>Agregar al Carrito</button>{/*Boton que se activa sólo cuando el inventario de productos sea diferente de cero */}
                     <hr />
                     <p>Estado: <span id='stock_estado' className={product.inventario > 0 ? 'greenColor' : 'redColor'}></span>{product.inventario > 0 ? 'En existencia' : 'Agotado'}</p>
                     <hr />
@@ -87,41 +91,42 @@ export const ProductDetails = () => {
                     <p>{product.descripcion}</p>
                     <hr />
                     <p id='vendedor'>Vendido por: <strong>{product.vendedor}</strong></p>       
-                    <button id='btn_review' type='button' className='btn btn-primary mt-4' data-toggle='modal' data-target='#calificacionModal'>Deja tu Opinion</button> 
-                    <div className='alert alert-danger mt-5' type='alert'>Inicia Sesion para dejar tu review</div>
+                    <button id="btn_review" type="button" className="btn btn-primary mt-4" 
+                    data-toggle="modal" data-target="#ratingModal">Deja tu Opinion</button>
+                    <div className="alert alert-danger mt-5" type="alert">Inicia Sesión para dejar tu review</div>
                     
-                    {/*Mensaje emergente para dejar opinion y calificaciones */}
-                    <div className='row mt-2 mb-5'>
-                        <div className='rating w-50'>
-                            <div className='modal fade' id='ratingModal' tabIndex='-1' role='dialog' aria-labelledby='ratingModalLabel' aria-hidden='true'>
-                                <div className='modal-dialog' role='document'>
-                                    <div className='modal-content'>
-                                        <div className='model-header'>
-                                            <h5 className='modal-title' id='ratingModalLabel'>Enviar review</h5>
-                                            <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-                                                <span aria-hidden='true'>NOMBRE DUMMIEN POR AHORA</span>
-                                            </button>
-                                        </div>
-                                        <div className='modal-body'>
-                                            <ul className='stars'>
-                                                <li className='star'><i className='fa fa-star'></i></li>
-                                                <li className='star'><i className='fa fa-star'></i></li>
-                                                <li className='star'><i className='fa fa-star'></i></li>
-                                                <li className='star'><i className='fa fa-star'></i></li>
-                                                <li className='star'><i className='fa fa-star'></i></li>
-                                            </ul>
-
-                                            <textarea name="review" id='review' className='form-control mt3'></textarea>
-
-                                            <button className='btn my-3 float-right review-btn px-4 text-white' data-dismiss='modal' aria-label='Close'>Enviar</button>
-                                        </div>
+                    {/*Mensaje emergente para dejar opinion y calificacion*/}
+                <div className="row mt-2 mb-5">
+                    <div className="rating w-50">
+                        <div className="modal fade" id="ratingModal" tabIndex="-1" role="dialog" aria-labelledby='ratingModalLabel' aria-hidden="true">
+                            <div className="modal-dialog" role="document">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" id="ratingModalLabel">Enviar Review</h5>
+                                        <button type="button" className='close' data-dismiss="modal" aria-label='Close'>
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
                                     </div>
-                            </div>        
+                                    <div className="modal-body">
+                                        <ul className="stars">
+                                            <li className="star"><i className="fa fa-star"></i></li>
+                                            <li className="star"><i className="fa fa-star"></i></li>
+                                            <li className="star"><i className="fa fa-star"></i></li>
+                                            <li className="star"><i className="fa fa-star"></i></li>
+                                            <li className="star"><i className="fa fa-star"></i></li>
+                                        </ul>
+
+                                        <textarea name="review" id="review" className="form-control mt3"></textarea>
+
+                                        <button className="btn my-3 float-right review-btn px-4 text-white" data-dismiss="modal" aria-label="Close">Enviar</button>                       
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
+                </div>
+            </div>
             </Fragment>
         )}
     </Fragment>

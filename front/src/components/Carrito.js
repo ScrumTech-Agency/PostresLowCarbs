@@ -1,11 +1,8 @@
-import React, { Fragment } from 'react'
-import MetaData from './layout/MetaData'
+import React, { Fragment } from "react";
+import MetaData from "./layout/MetaData";
 import Table from "react-bootstrap/Table";
 
-
-
 export const Carrito = () => {
-
   return (
     <Fragment>
       <MetaData title="Productos WA"> </MetaData>
@@ -38,11 +35,8 @@ export const Carrito = () => {
       </nav>
 
       <div className="contenedor d-flex flex-wrap">
-        
         <div className="table responsive text-center align-middle">
-        
           <Table bordered hover>
-          
             <thead className="table-danger">
               <tr>
                 <th>Imagen</th>
@@ -72,11 +66,10 @@ export const Carrito = () => {
                     alt="Harina de coco"
                   ></img>
                 </td>
-                
+
                 <td>2</td>
                 <td>Harina de Coco 250 gr</td>
                 <td>20000</td>
-                
               </tr>
             </tbody>
             <tfoot>
@@ -86,7 +79,7 @@ export const Carrito = () => {
               <td>$40000</td>
             </tfoot>
           </Table>
-          
+
           <div className="d-grid gap-2 col-4 mx-auto">
             <a
               href="http://localhost:3000"
@@ -109,6 +102,6 @@ export const Carrito = () => {
       </div>
     </Fragment>
   );
-}
+};
 
-export default Carrito
+export default Carrito;

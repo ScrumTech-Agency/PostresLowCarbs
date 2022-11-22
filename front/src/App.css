@@ -1,3 +1,6 @@
+
+
+
 html,
 body {
   font-family: "Amazon Ember";
@@ -27,12 +30,12 @@ body {
 }
 
 nav {
-  background-color: #3CE6AE;
+  background-color: #3ce6ae;
   padding: 1rem 1rem;
 }
 
 #search_btn {
-  background-color: #fddbc2;
+  background-color: #dfaa9c;
 }
 
 .input-group {
@@ -47,9 +50,10 @@ f #search_field {
 #login_btn,
 #view_btn {
   background-color: #dfaa9c;
-  padding: 0.4rem 1.8rem;
+  padding: 0.4rem 1rem;
   font-weight: bold;
-  font-family: roboto,sans-serif;
+  font-family: roboto, sans-serif;
+  color: #000000;
 }
 
 #cart {
@@ -115,7 +119,7 @@ f #search_field {
 
 /* Footer */
 footer {
-  background-color: #3CE6AE;
+  background-color: #3ce6ae;
   position: absolute;
   margin-top: 8rem;
   color: black;
@@ -164,7 +168,7 @@ footer {
 #cart_btn,
 #review_btn {
   border-radius: 2rem;
-  background-color: #fa9c23;
+  background-color: #dfaa9c;
   border: none;
   padding: 0.5rem 2rem;
 }
@@ -209,8 +213,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #dfaa9c;
+  border-color: #dfaa9c transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -242,22 +246,22 @@ footer {
 }
 
 #card_item_price {
-  color: #febd69;
+  color: #dfaa9c;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
 #checkout_btn,
 .review-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
   margin-top: 2rem;
   border-radius: 5rem;
 }
 
 #view_order_details {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
 }
 
 #order_summary {
@@ -309,10 +313,11 @@ footer {
 }
 
 .wrapper form .btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
-  color: white;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
+  color: #000000;
   margin-top: 2.5rem;
+  font-weight: bold;
 }
 
 .wrapper form a {
@@ -389,7 +394,7 @@ footer {
 }
 
 .active-step {
-  background: #fa9c23;
+  background: #dfaa9c;
   color: #fff;
 }
 
@@ -397,7 +402,7 @@ footer {
   float: left;
   width: 0;
   border-top: 20px solid transparent;
-  border-left: 15px solid #fa9c23;
+  border-left: 15px solid #dfaa9c;
   border-bottom: 20px solid transparent;
   margin-left: -1px;
 }
@@ -405,9 +410,9 @@ footer {
 .triangle2-active {
   width: 0;
   float: left;
-  border-top: 20px solid #fa9c23;
+  border-top: 20px solid #dfaa9c;
   border-left: 15px solid #fff;
-  border-bottom: 20px solid #fa9c23;
+  border-bottom: 20px solid #dfaa9c;
   margin-right: -1px;
 }
 
@@ -447,8 +452,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
 }
 
 /* Confirm Order */
@@ -459,9 +464,9 @@ footer {
 }
 
 .update-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
-  color: white;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
+  color: black;
 }
 
 .update-btn:hover {
@@ -470,16 +475,17 @@ footer {
 
 /* Pagination */
 .page-item.active .page-link {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
+  color: #000000;
 }
 
 .page-link {
-  color: #fa9c23;
+  color: grey;
 }
 
 .page-link:hover {
-  color: #fa9c23;
+  color: grey;
 }
 
 /* Admin Sidebar */
@@ -490,6 +496,7 @@ footer {
   align-items: stretch;
   min-height: 100vh;
   font-weight: normal;
+  margin: 0;
 
   margin-top: 0;
   height: 100%;
@@ -500,12 +507,13 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #232f3e;
-  color: #fff;
+  background: #dfaa9c;
+  color: black;
   transition: all 0.3s;
 }
 #sidebar.active {
   margin-left: -250px;
+  color: black;
 }
 
 #sidebar .sidebar-header {
@@ -514,19 +522,19 @@ footer {
 }
 #sidebar ul.components {
   padding: 5px 0px;
-  border-bottom: 1px solid #232f3e;
+  border-bottom: 1px solid #dfaa9c;
 }
 
 #sidebar ul li a {
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 #sidebar ul li a:hover {
-  color: #232f3e;
-  background: #fff;
+  color: black;
+  background: #89f4d1;
 }
 
 #sidebar ul li a i {
@@ -535,8 +543,8 @@ footer {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #232f3e;
+  color: black;
+  background: #89f4d1;
 }
 a[data-toggle="collapse"] {
   position: relative;
@@ -552,7 +560,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 1rem !important;
   padding-left: 30px !important;
-  background: #232f3e;
+  background: #dfaa9c;
 }
 
 ul.CTAs {
@@ -578,6 +586,8 @@ ul.CTAs a {
 .card-font-size {
   font-size: 1.5rem;
 }
+
+
 
 /* Reviews */
 
@@ -615,4 +625,52 @@ ul.CTAs a {
 .review_user {
   font-size: 0.8rem;
   color: grey;
+}
+
+.card1{
+  background:#9ADBC8;
+}
+
+.card2{
+  background: #BADBBF;
+}
+
+.card3{
+  background: #DBB9AF;
+}
+
+.card4{
+  background: #64848F;
+}
+
+.card5{
+  background: #A4CEDB;
+  }
+
+.card-footer{
+  color: black;
+}
+
+.btn1{
+  background-color: #dfaa9c;
+  border-color: #dfaa9c;
+  color: #000000;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+}
+
+.btn2{
+  background-color: #48E0DE;
+  border-color: #48E0DE;
+  color: #000000;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+}
+
+.btn3{
+  background-color: #be2600;
+  border-color: #be2600;
+  color: #000000;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
 }
