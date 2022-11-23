@@ -25,6 +25,8 @@ import ForgotPassword from "./components/user/ForgotPassword";
 import { NewPassword } from "./components/user/NewPassword";
 import { UpdateProduct } from "./components/admin/UpdateProduct";
 import Shipping from "./components/cart/Shipping";
+import { ListOrder } from "./components/order/ListOrder";
+import { OrderDetails } from "./components/order/OrderDetails";
 
 
 
@@ -69,6 +71,15 @@ function App() {
           
             <Route path="/shipping" 
               element={<ProtectedRoute><Shipping /></ProtectedRoute>}/>
+
+            {/*Rutas Órdenes*/}
+            <Route path="/myOrders"
+              element={<ProtectedRoute><ListOrder /></ProtectedRoute>} />
+
+            <Route path="/order/:id"
+              element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
+
+
           </Routes>
         </div>
         <Footer />
