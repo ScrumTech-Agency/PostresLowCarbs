@@ -100,7 +100,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
 //Crear nuevo producto /api/productos
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   
-  /* //PARA CARGAR IMÁGENES, PERO GENERA UN ERROR DE LENGTH
+   //PARA CARGAR IMÁGENES, PERO GENERA UN ERROR DE LENGTH
   let imagen=[]
   if(typeof req.body.imagen==="string"){
       imagen.push(req.body.imagen)
@@ -121,7 +121,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   }
 
   req.body.imagen=imagenLink
-  */
+  
 
   req.body.user = req.user.id;
   const product = await producto.create(req.body);
