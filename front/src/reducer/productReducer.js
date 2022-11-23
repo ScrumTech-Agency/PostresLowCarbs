@@ -20,7 +20,7 @@ import { ALL_PRODUCTS_REQUEST,
     UPDATE_PRODUCT_FAIL,
     UPDATE_PRODUCT_RESET} from "../constans/productConstants";
 
-    export const productsReducer = (state ={ products: []}, action)=>{  //Aqui se trae un arreglo de productos
+    export const productsReducer = (state ={ products: [] }, action)=>{  //Aqui se trae un arreglo de productos
         switch(action.type){
             case ALL_PRODUCTS_REQUEST:
             case ADMIN_PRODUCTS_REQUEST:

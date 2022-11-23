@@ -10,7 +10,7 @@ import HomeAdmin from "./components/HomeAdmin";
 import HomeClient from "./components/HomeClient";
 import { ModificacionProducto } from "./components/ModificacionProducto";
 import Dashboard from "./components/admin/Dashboard";
-import ProductsList from "./components/admin/ProductList";
+import ProductsList from "./components/admin/ProductsList";
 import NewProduct from "./components/admin/NewProduct";
 import Cart from "./components/cart/Cart";
 import { Login } from "./components/user/Login";
@@ -44,9 +44,9 @@ function App() {
             <Route path="/Home" element={<Home />} />
             <Route path="/Ventas" element={<Ventas />} />
             <Route path="/producto/:id" element={<ProductDetails />} />
-            <Route path="/ProductList" element={<ProductsList />} />
+            <Route path="/productList" element={<ProductsList />} />
             <Route path="/NewProducto" element={<NewProduct />} />
-            <Route path="/search/:keyword" element={<Home />}/>
+            <Route path="/search/:keyword" element={<Home />} />
             <Route path="/carrito" element={<Cart />} />
             <Route path="/HomeAdmin" element={<HomeAdmin />} />
             <Route path="/HomeClient" element={<HomeClient />} />
@@ -55,22 +55,22 @@ function App() {
               element={<ModificacionProducto />}
             />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element= {<Register />} />
-            <Route path="/yo" element={<Profile />}/>
-            <Route path="/yo/update" element={<UpdateProfile />}/>
-            <Route path="/password/update" element={<UpdatePassword />}/>
-            <Route path="/password/forgot" element={<ForgotPassword />}/>
-            <Route path="/resetPassword/:token" element={<NewPassword />}/>
+            <Route path="/register" element={<Register />} />
+            <Route path="/yo" element={<Profile />} />
+            <Route path="/yo/update" element={<UpdateProfile />} />
+            <Route path="/password/update" element={<UpdatePassword />} />
+            <Route path="/password/forgot" element={<ForgotPassword />} />
+            <Route path="/resetPassword/:token" element={<NewPassword />} />
 
-             {/*Ruta protegida*/}
-             <Route path="/dashboard" 
-             element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>}/>
+            {/*Ruta protegida*/}
+            <Route path="/dashboard"
+              element={<ProtectedRoute isAdmin={true}><Dashboard /></ProtectedRoute>} />
 
-            <Route path="/updateProduct/:id" 
-              element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>}/>
-          
-            <Route path="/shipping" 
-              element={<ProtectedRoute><Shipping /></ProtectedRoute>}/>
+            <Route path="/updateProduct/:id"
+              element={<ProtectedRoute isAdmin={true}><UpdateProduct /></ProtectedRoute>} />
+
+            <Route path="/shipping"
+              element={<ProtectedRoute><Shipping /></ProtectedRoute>} />
 
             {/*Rutas Órdenes*/}
             <Route path="/myOrders"
@@ -79,9 +79,12 @@ function App() {
             <Route path="/order/:id"
               element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
 
+            <Route path="/productList"
+              element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
+
 
           </Routes>
-        </div>
+          </div>
         <Footer />
       </div>
     </Router>
